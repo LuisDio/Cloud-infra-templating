@@ -1,7 +1,7 @@
     [
         {
             "ParameterKey": "EnvironmentName",
-            "ParameterValue": "testproject"
+            "ParameterValue": "NetworkTemplate"
         },
         {
             "ParameterKey": "VpcCIDR",

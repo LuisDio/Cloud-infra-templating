@@ -239,8 +239,20 @@ Outputs:
       Name: !Sub ${EnvironmentName}-PUB1-SN
 
   PublicSubnets2:
-    Description: A Reference to the public subnet in 2st availability zone
+    Description: A Reference to the public subnet in 2nd availability zone
     Value: !Ref PublicSubnet2
     Export:
       Name: !Sub ${EnvironmentName}-PUB2-SN
+
+  PrivateSubnet1:
+    Description: A Reference to the private subnet in 1st availability zone
+    Value: !Ref PrivateSubnet1
+    Export:
+      Name: !Sub ${EnvironmentName}-PRI1-SN
+
+  PrivateSubnet2:
+    Description: A Reference to the private subnet in 2nd availability zone
+    Value: !Ref PrivateSubnet2
+    Export:
+      Name: !Sub ${EnvironmentName}-PRI2-SN
     
