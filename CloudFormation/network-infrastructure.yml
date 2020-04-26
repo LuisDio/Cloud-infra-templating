@@ -1,0 +1,20 @@
+Parameters:
+
+  EnvironmentName:
+    Description: An environment name that will be prefixed to resources
+    Type: String
+
+  VpcCIDR:
+    Description: Ip range for Cidr
+    Type: String
+    Default: 10.0.0.0/16
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCIDR
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: !Ref EnvironmentName
