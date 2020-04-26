@@ -200,3 +200,47 @@ Resources:
       SubnetId: !Ref PrivateSubnet2
       
 
+Outputs:
+
+  VPC:
+    Description: A reference to the created VPC
+    Value: !Ref VPC
+    Export:
+      Name: !Sub ${EnvironmentName}-VPCID
+
+  VPCPublicRouteTable:
+    Description: Public Routing
+    Value: !Ref PublicRouteTable
+    Export:
+      Name: !Sub ${EnvironmentName}-PUB-RT
+
+  VPCPrivateRouteTable1:
+    Description: A Private Routing AZ1
+    Value: !Ref PrivateRouteTable1
+    Export:
+      Name: !Sub ${EnvironmentName}-PRI1-RT
+
+  VPCPrivateRouteTable2:
+    Description: A Private Routing AZ2
+    Value: !Ref PrivateRouteTable2
+    Export:
+      Name: !Sub ${EnvironmentName}-PRI2-RT
+
+  PublicSubnets:
+    Description: A List of Public Subnets
+    Value: !Join [",", [ !Ref PrivateSubnet1, !Ref PrivateSubnet2]]
+    Export:
+      Name: !Sub ${EnvironmentName}-PRIV-NETS
+
+  PublicSubnets1:
+    Description: A Reference to the public subnet in 1st availability zone
+    Value: !Ref PublicSubnet1
+    Export:
+      Name: !Sub ${EnvironmentName}-PUB1-SN
+
+  PublicSubnets2:
+    Description: A Reference to the public subnet in 2st availability zone
+    Value: !Ref PublicSubnet2
+    Export:
+      Name: !Sub ${EnvironmentName}-PUB2-SN
+    
