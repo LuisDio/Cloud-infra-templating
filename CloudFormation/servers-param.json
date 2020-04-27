@@ -1,9 +1,6 @@
 [
   {
     "ParameterKey": "EnvironmentName",
-    "ParameterValue": "Servertemplate"
-  },
-  {
-
+    "ParameterValue": "ProjectDemo"
   }
 ]
