@@ -1,0 +1,29 @@
+#!/bin/bash
+
+
+sudo apt install ansible python-pip -y
+sudo pip install tox
+
+git clone git@github.com:cloudalchemy/ansible-prometheus.git
+cd ansible-prometheus
+
+mkdir -p roles/cloudalchemy.prometheus
+mv defaults/ handlers/ meta/ molecule/ tasks/ templates/ vars/ roles/cloudalchemy.prometheus/
+
+# Create main.yml
+#cat <<EOF > main.yml
+---
+- hosts: all
+  roles:
+  - cloudalchemy.prometheus
+  vars:
+    prometheus_targets:
+      node:
+      - targets:
+        - localhost:9100
+        labels:
+          env: demosite
+
+EOF
+
+# Create inventory as well
