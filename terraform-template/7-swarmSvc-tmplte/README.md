@@ -10,11 +10,11 @@
 ### Apply the plan:
 ```terraform apply tfplan```
 
-### List Docker volumes:
-```docker volume inspect mysql_data```
+### List Docker service:
+```docker service ls```
 
-### List the data in mysql_data:
-```sudo ls /var/lib/docker/volumes/mysql_data/_data```
+### List Docker container:
+```docker container ls```
 
 ### Destroy the environment:
 ```terraform destroy -auto-approve -var 'ext_port=8082'```
