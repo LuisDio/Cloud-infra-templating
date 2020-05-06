@@ -1,24 +1,24 @@
-### Create a system user for Prometheus:
+1. Create a system user for Prometheus:
 ```sudo useradd --no-create-home --shell /bin/false prometheus```
 
-### Create the directories in which we'll be storing our configuration files and libraries:
+2. Create the directories in which we'll be storing our configuration files and libraries:
 ```sudo mkdir /etc/prometheus```
 ```sudo mkdir /var/lib/prometheus```
 
-### Set the ownership of the /var/lib/prometheus directory:
+3. Set the ownership of the /var/lib/prometheus directory:
 ```sudo chown prometheus:prometheus /var/lib/prometheus```
 
-### Pull down the tar.gz file from the Prometheus downloads page:
+4. Pull down the tar.gz file from the Prometheus downloads page:
 
 ```
 cd /tmp/
 wget https://github.com/prometheus/prometheus/releases/download/v2.7.1/prometheus-2.7.1.linux-amd64.tar.gz
 ```
 
-### Extract the files:
+5. Extract the files:
 ```tar -xvf prometheus-2.7.1.linux-amd64.tar.gz```
 
-### Move the configuration file and set the owner to the prometheus user:
+6. Move the configuration file and set the owner to the prometheus user:
 
 ```
 cd prometheus-2.7.1.linux-amd64```
@@ -27,7 +27,7 @@ sudo mv prometheus.yml /etc/prometheus
 sudo chown -R prometheus:prometheus /etc/prometheus
 ```
 
-### Move the binaries and set the owner:
+7. Move the binaries and set the owner:
 ```
 sudo mv prometheus /usr/local/bin/
 sudo mv promtool /usr/local/bin/
@@ -35,7 +35,7 @@ sudo chown prometheus:prometheus /usr/local/bin/prometheus
 sudo chown prometheus:prometheus /usr/local/bin/promtool
 ```
 
-### Create the service file:
+8. Create the service file:
 ```sudo vim /etc/systemd/system/prometheus.service```
 
 Add:
@@ -69,4 +69,4 @@ sudo systemctl start prometheus
 sudo systemctl enable prometheus
 ```
 
-Visit Prometheus in your web browser at PUBLICIP:9090.
+#### Visit Prometheus in your web browser at PUBLICIP:9090.
