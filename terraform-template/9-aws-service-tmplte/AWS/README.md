@@ -5,6 +5,9 @@ export AWS_SECRET_ACCESS_KEY="[SECRET_KEY]]"
 terraform init
 ```
 
+### Create your terraform.tfvars file and add value of variable
+
+
 ### Validate code:
 ```terraform validate```
 
