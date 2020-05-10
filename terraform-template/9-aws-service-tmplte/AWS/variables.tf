@@ -1,5 +1,12 @@
-# ----root/variables.tf-----
+#----root/variables.tf-----
 variable "aws_region" {}
 
-# Storage variable
+#------ storage variables
 variable "project_name" {}
+
+#-------networking variables
+variable "vpc_cidr" {}
+variable "public_cidrs" {
+  type = "list"
+}
+variable "accessip" {}
