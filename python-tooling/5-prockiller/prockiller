@@ -31,3 +31,4 @@ else:
         print(f"Killed process {pid}")
     else:
         print(f"No process listening on port {port}")
+        exit(1)
