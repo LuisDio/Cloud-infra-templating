@@ -8,3 +8,8 @@
 */*/*/terraform.tfvars
 */*/*/.terraform
 */*/terraform.tfvars
+
+*/*/*/keyfile
+*/*/*/keyfile.pub
+
+
