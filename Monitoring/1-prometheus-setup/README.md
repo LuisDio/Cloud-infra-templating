@@ -70,3 +70,32 @@ sudo systemctl enable prometheus
 ```
 
 #### Visit Prometheus in your web browser at PUBLICIP:9090.
+
+
+
+### To add new target to scrap
+
+1. Manually update the prometheus.yml file found inside ```/etc/prometheus/prometheus.yml```
+
+```
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+    - targets: ['localhost:9090']
+
+  - job_name: 'grafana' 
+    static_configs:
+    - targets: ['localhost:3000']
+    
+  - job_name: 'alertmanager' 
+    static_configs:
+    - targets: ['localhost:9093']
+```
+
+2. Set a service discovery endpoint
+Add specific scrap config to prometheus.yml given the type of service discovery(consul, zookeeper, ...)
