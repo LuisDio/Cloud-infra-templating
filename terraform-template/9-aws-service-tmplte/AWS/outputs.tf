@@ -1,37 +1,34 @@
-#-----root/outputs.tf------
+#----root/outputs.tf-----
 
-#----storage output--------
-output "bucket_name" {
+#----storage outputs------
+
+output "Bucket Name" {
   value = "${module.storage.bucket_name}"
 }
 
-#---Networking Output-------
-output "public Subnets" {
-  value = "${join(",", module.networking.public_subnets)}"
+#---Networking Outputs -----
+
+output "Public Subnets" {
+  value = "${join(", ", module.networking.public_subnets)}"
 }
 
 output "Subnet IPs" {
-  value = "${join(",", module.networking.Subnet_ips)}"
+  value = "${join(", ", module.networking.subnet_ips)}"
 }
 
 output "Public Security Group" {
   value = "${module.networking.public_sg}"
+  # These are network output
 }
 
-#---Compute Output---------
+#---Compute Outputs ------
+
 output "Public Instance IDs" {
   value = "${module.compute.server_id}"
+  # These are compute output
 }
 
 output "Public Instance IPs" {
   value = "${module.compute.server_ip}"
+  # These are compute output
 }
-
-output "Public Security Group" {
-  value = "${module.networking.public_sg}"
-}
-
-
-
-
-
