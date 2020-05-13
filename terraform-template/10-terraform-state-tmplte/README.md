@@ -20,9 +20,8 @@ export AWS_SECRET_ACCESS_KEY="[SECRET_KEY]]"
 export AWS_DEFAULT_REGION="us-east-1"
 ```
 4. Add Backend to Your Scripts
-```
 Create terraform.tf:
-vi terraform.tf
+```
 terraform.tf contents:
 terraform {
   backend "s3" {
