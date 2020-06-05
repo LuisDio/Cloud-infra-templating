@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2020-06-05T10:10:56Z"
+  name: nginx-configuration
+  namespace: ingress-space
+  resourceVersion: "2452"
+  selfLink: /api/v1/namespaces/ingress-space/configmaps/nginx-configuration
+  uid: 637d6286-4db7-4972-ba8d-2c2557eef273

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-06-03T18:14:42Z"
+  name: ingress-service
+  namespace: ingress-space
+  resourceVersion: "550"
+  selfLink: /api/v1/namespaces/ingress-space/services/ingress-service
+  uid: 2ac0ab9f-915b-4518-88cb-92c0887428bc
+spec:
+  clusterIP: 10.107.62.14
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: http
+    nodePort: 30080
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: https
+    nodePort: 32732
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  selector:
+    name: nginx-ingress
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

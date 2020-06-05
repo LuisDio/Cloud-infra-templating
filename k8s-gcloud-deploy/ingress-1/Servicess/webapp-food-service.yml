@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-06-03T18:33:07Z"
+  name: food-service
+  namespace: app-space
+  resourceVersion: "2308"
+  selfLink: /api/v1/namespaces/app-space/services/food-service
+  uid: 00c3b654-15de-4b12-9702-92bb158f5bb4
+spec:
+  clusterIP: 10.96.34.190
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: webapp-food
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

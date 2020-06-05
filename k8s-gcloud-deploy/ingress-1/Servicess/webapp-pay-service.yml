@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-06-03T18:42:00Z"
+  name: pay-service
+  namespace: critical-space
+  resourceVersion: "3119"
+  selfLink: /api/v1/namespaces/critical-space/services/pay-service
+  uid: 41a35cf6-7994-4611-91aa-41070f467a77
+spec:
+  clusterIP: 10.110.202.110
+  ports:
+  - port: 8282
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: webapp-pay
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
